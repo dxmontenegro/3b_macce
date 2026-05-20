@@ -5,64 +5,153 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Diagnóstico Alimentar IA</title>
 <style>
-:root{--bg:#0f172a;--card:#111827;--accent:#22c55e;--accent2:#38bdf8;--text:#e5e7eb;--muted:#94a3b8}
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --accent:#22c55e;
+  --accent2:#38bdf8;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:var(--text)}
-header{padding:32px 16px;text-align:center}
-h1{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.6rem)}
-p{margin:0;color:var(--muted)}
-main{max-width:1100px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:1.2fr .8fr}
-.card{background:rgba(17,24,39,.92);border:1px solid rgba(148,163,184,.2);border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-section h2{margin:0 0 12px;font-size:1.1rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
-label.chk{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;background:rgba(30,41,59,.9);border:1px solid rgba(148,163,184,.15);cursor:pointer}
-label.chk input{margin-top:3px;transform:scale(1.1)}
-small{color:var(--muted)}
-button{width:100%;border:0;border-radius:14px;padding:14px 16px;font-weight:700;font-size:1rem;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#052e16;cursor:pointer}
-.output{min-height:240px;white-space:pre-wrap;line-height:1.55;color:#e2e8f0}
-.tag{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(34,197,94,.15);color:#86efac;font-size:.85rem;margin:0 6px 6px 0}
-.note{font-size:.9rem;color:var(--muted)}
-@media (max-width:900px){main{grid-template-columns:1fr}}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:var(--text);
+}
+header{
+  padding:28px 16px 18px;
+  text-align:center;
+}
+.logo{
+  display:block;
+  width:min(180px, 42vw);
+  height:auto;
+  margin:0 auto 14px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+h1{
+  margin:0 0 8px;
+  font-size:clamp(1.6rem,3vw,2.6rem);
+}
+p{
+  margin:0;
+  color:var(--muted);
+}
+main{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px;
+  display:grid;
+  gap:16px;
+  grid-template-columns:1.2fr .8fr;
+}
+.card{
+  background:rgba(17,24,39,.92);
+  border:1px solid rgba(148,163,184,.2);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+section h2{
+  margin:0 0 12px;
+  font-size:1.1rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+}
+label.chk{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(30,41,59,.9);
+  border:1px solid rgba(148,163,184,.15);
+  cursor:pointer;
+}
+label.chk input{
+  margin-top:3px;
+  transform:scale(1.1);
+}
+button{
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:14px 16px;
+  font-weight:700;
+  font-size:1rem;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#052e16;
+  cursor:pointer;
+}
+.output{
+  min-height:240px;
+  white-space:pre-wrap;
+  line-height:1.55;
+  color:#e2e8f0;
+}
+.tag{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(34,197,94,.15);
+  color:#86efac;
+  font-size:.85rem;
+  margin:0 6px 6px 0;
+}
+.note{
+  font-size:.9rem;
+  color:var(--muted);
+}
+@media (max-width:900px){
+  main{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <header>
-<h1>MACCE - 3ºB  /  Alimentação</h1>
-<p>Projeto educativo com foco em IA, sintomas e alimentos que podem ajudar na rotina alimentar.</p>
+  <img src="imagem1.jpeg" alt="Logo do projeto" class="logo">
+  <h1>Diagnóstico Sugestivo de Alimentação</h1>
+  <p>Projeto educativo com foco em IA, sintomas e alimentos que podem ajudar na rotina alimentar.</p>
 </header>
 
 <main>
-<div class="card">
-<section>
-<h2>Sintomas observados</h2>
-<div class="grid">
-<label class="chk"><input type="checkbox" value="cansaco"> Cansaço e fraqueza</label>
-<label class="chk"><input type="checkbox" value="pale"> Pele pálida</label>
-<label class="chk"><input type="checkbox" value="hair"> Queda de cabelo</label>
-<label class="chk"><input type="checkbox" value="falta_ar"> Falta de ar ao esforço</label>
-<label class="chk"><input type="checkbox" value="lingua"> Língua dolorida ou vermelha</label>
-<label class="chk"><input type="checkbox" value="visao"> Problemas de visão</label>
-<label class="chk"><input type="checkbox" value="formigamento"> Formigamento/numbness</label>
-<label class="chk"><input type="checkbox" value="memoria"> Falhas de memória/concentração</label>
-<label class="chk"><input type="checkbox" value="ossos"> Ossos fracos/dor óssea</label>
-<label class="chk"><input type="checkbox" value="imunidade"> Baixa imunidade</label>
-<label class="chk"><input type="checkbox" value="pele_seca"> Pele seca</label>
-<label class="chk"><input type="checkbox" value="hemorragia"> Sangramento gengival</label>
-</div>
-</section>
+  <div class="card">
+    <section>
+      <h2>Sintomas observados</h2>
+      <div class="grid">
+        <label class="chk"><input type="checkbox" value="cansaco"> Cansaço e fraqueza</label>
+        <label class="chk"><input type="checkbox" value="pale"> Pele pálida</label>
+        <label class="chk"><input type="checkbox" value="hair"> Queda de cabelo</label>
+        <label class="chk"><input type="checkbox" value="falta_ar"> Falta de ar ao esforço</label>
+        <label class="chk"><input type="checkbox" value="lingua"> Língua dolorida ou vermelha</label>
+        <label class="chk"><input type="checkbox" value="visao"> Problemas de visão</label>
+        <label class="chk"><input type="checkbox" value="formigamento"> Formigamento/numbness</label>
+        <label class="chk"><input type="checkbox" value="memoria"> Falhas de memória/concentração</label>
+        <label class="chk"><input type="checkbox" value="ossos"> Ossos fracos/dor óssea</label>
+        <label class="chk"><input type="checkbox" value="imunidade"> Baixa imunidade</label>
+        <label class="chk"><input type="checkbox" value="pele_seca"> Pele seca</label>
+        <label class="chk"><input type="checkbox" value="hemorragia"> Sangramento gengival</label>
+      </div>
+    </section>
 
-<section style="margin-top:14px">
-<button onclick="avaliar()">Gerar sugestão alimentar</button>
-</section>
-</div>
+    <section style="margin-top:14px">
+      <button onclick="avaliar()">Gerar sugestão alimentar</button>
+    </section>
+  </div>
 
-<div class="card">
-<section>
-<h2>Resultado</h2>
-<div id="out" class="output">Marque os sintomas e clique em gerar.</div>
-<p class="note">Este site é educativo e não substitui avaliação médica ou nutricional.</p>
-</section>
-</div>
+  <div class="card">
+    <section>
+      <h2>Resultado</h2>
+      <div id="out" class="output">Marque os sintomas e clique em gerar.</div>
+      <p class="note">Este site é educativo e não substitui avaliação médica ou nutricional.</p>
+    </section>
+  </div>
 </main>
 
 <script>
@@ -84,7 +173,10 @@ const map = {
 function avaliar(){
   const vals=[...document.querySelectorAll('input[type=checkbox]:checked')].map(i=>i.value);
   const out=document.getElementById('out');
-  if(!vals.length){out.textContent='Selecione ao menos um sintoma.';return}
+  if(!vals.length){
+    out.textContent='Selecione ao menos um sintoma.';
+    return;
+  }
   const tally={};
   vals.forEach(v=>{map[v].f.forEach(f=>tally[f]=(tally[f]||0)+1)});
   const top=Object.entries(tally).sort((a,b)=>b[1]-a[1]).slice(0,6);
